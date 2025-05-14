@@ -1,0 +1,69 @@
+{
+  "//": "刀 AI 数据库扩展技术 - 样本数据集",
+  "//": "本文件包含模拟的性能指标、优化建议和预测结果，用于演示系统功能。",
+  "//": "注意：此数据仅用于演示目的，不反映真实系统输出。",
+  "performance_metrics": [
+    {
+      "timestamp": "2025-05-14T18:00:00Z",
+      "query_execution_time": 0.45,
+      "cpu_usage": 42.3,
+      "memory_usage": 58.7,
+      "disk_io": 520,
+      "query_count": 12
+    },
+    {
+      "timestamp": "2025-05-14T18:01:00Z",
+      "query_execution_time": 0.72,
+      "cpu_usage": 48.1,
+      "memory_usage": 62.4,
+      "disk_io": 610,
+      "query_count": 15
+    }
+  ],
+  "optimization_suggestions": [
+    {
+      "action": "create_index",
+      "confidence": 0.95,
+      "parameters": {
+        "table": "user_data",
+        "column": "username"
+      },
+      "estimated_impact": {
+        "query_time_reduction": 25.5
+      },
+      "status": "pending"
+    },
+    {
+      "action": "partition_data",
+      "confidence": 0.88,
+      "parameters": {
+        "table": "performance_metrics",
+        "partition_key": "timestamp"
+      },
+      "estimated_impact": {
+        "query_time_reduction": 18.2
+      },
+      "status": "pending"
+    }
+  ],
+  "prediction_results": [
+    {
+      "timestamp": "2025-05-14T18:00:00Z",
+      "anomaly_detected": false,
+      "anomaly_score": 0.82,
+      "workload_prediction": {
+        "predicted_query_time": 0.50,
+        "predicted_resource_demand": 0.65
+      }
+    },
+    {
+      "timestamp": "2025-05-14T18:01:00Z",
+      "anomaly_detected": true,
+      "anomaly_score": 0.96,
+      "workload_prediction": {
+        "predicted_query_time": 0.80,
+        "predicted_resource_demand": 0.75
+      }
+    }
+  ]
+}

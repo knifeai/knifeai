@@ -1,0 +1,73 @@
+# 刀 AI 数据库扩展技术 - 示例配置文件
+# 本文件提供 config.yaml 的模板，展示系统配置的推荐结构和参数。
+# 注意：此文件仅用于演示目的，请根据实际需求修改并另存为 config.yaml。
+
+# 全局设置
+global:
+  environment: demo  # 运行环境：demo, dev, prod
+  log_level: info   # 日志级别：debug, info, warn, error
+  timezone: Asia/Shanghai  # 时区设置
+
+# 智能监控系统配置
+monitoring:
+  enabled: true
+  sampling_rate: 0.1  # 数据采样率（每秒采样比例）
+  metrics:
+    - query_execution_time  # 查询执行时间
+    - cpu_usage            # CPU 使用率
+    - memory_usage         # 内存使用率
+    - disk_io             # 磁盘 I/O
+  data_retention_days: 7  # 数据保留天数
+  agent:
+    port: 8081            # 监控代理监听端口
+    max_connections: 100  # 最大连接数
+
+# 预测分析引擎配置
+predictive_engine:
+  enabled: true
+  model:
+    type: ensemble        # 模型类型：ensemble, time_series, anomaly_detection
+    training_interval: 3600  # 模型训练间隔（秒）
+    features:
+      - query_patterns    # 查询模式
+      - resource_usage    # 资源使用情况
+      - access_frequency  # 数据访问频率
+  prediction_horizon: 86400  # 预测时间范围（秒，相当于1天）
+  anomaly_threshold: 0.95    # 异常检测阈值
+
+# 自动优化执行器配置
+optimization_executor:
+  enabled: true
+  operations:
+    - auto_indexing      # 自动索引
+    - data_partitioning  # 数据分区
+    - query_rewrite      # 查询重写
+    - resource_scaling   # 资源动态扩展
+  max_concurrent_ops: 5   # 最大并发优化操作数
+  rollback_enabled: true  # 启用回滚机制
+  optimization_interval: 300  # 优化执行间隔（秒）
+
+# 数据库连接配置
+database:
+  type: mysql            # 数据库类型：mysql, postgresql, mongodb, cassandra
+  host: localhost
+  port: 3306
+  username: demo_user
+  password: demo_password
+  database_name: dao_ai_demo
+  max_pool_size: 50      # 连接池最大大小
+
+# 安全与隐私设置
+security:
+  encryption: aes-256    # 加密算法
+  audit_log_enabled: true  # 启用审计日志
+  anonymization: enabled   # 数据匿名化
+
+# 可视化设置
+visualization:
+  enabled: true
+  refresh_interval: 300  # 图表刷新间隔（秒）
+  chart_types:
+    - line              # 折线图
+    - bar               # 柱状图
+    - table             # 表格
